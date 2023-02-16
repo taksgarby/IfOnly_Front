@@ -7,6 +7,9 @@ import Result from '../components/Result';
 const MainContainer = () => {
     const [ifOnlyStocks, setIfOnlyStocks] = useState([]);
 
+    // const [currency, setCurrency] = useState("");
+    // const [amount, setAmount] = useState();
+
     useEffect(() => {
         fetch("http://localhost:8080/ifonlystocks")
             .then((res) => res.json())
@@ -22,8 +25,8 @@ const MainContainer = () => {
       <Router>
       <Header />
       <Routes>
-      <Route path="/" exact element={ <StockList ifOnlyStocks={ifOnlyStocks} setIfOnlyStocks={ifOnlyStocks} />} />
-      <Route path="/result" element={<Result />} />
+      <Route path="/" exact element={ <StockList ifOnlyStocks={ifOnlyStocks} setIfOnlyStocks={ifOnlyStocks}  />} />
+      <Route path="/result" element={<Result ifOnlyStocks={ifOnlyStocks} />} />
       </Routes>
       </Router>
     );

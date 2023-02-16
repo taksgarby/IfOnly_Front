@@ -49,8 +49,8 @@ const Stock = ({ stock }) => {
       {/* <ItemImage src={require("../images/" + item.image)} alt="item" /> */}
       {/* <Button onClick={onClick}>Add To Basket</Button> */}
       <CompanyName>{stock.companyName}</CompanyName>
-      <Input />
-     <Button >Submit</Button>
+      <Input stock ={stock} />
+
     </StockItem>
   );
 };
