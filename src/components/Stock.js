@@ -30,13 +30,7 @@ const Stock = ({ stock }) => {
      margin: 5px;
   `
 
-  const Button = styled.button `
-    background-color: white;
-    color: black;
-    margin: 5px;
-    border: 2px solid grey; 
-    border-radius: 8px;
-  `
+
 
 //   const onClick = () => {
 //     const updatedUser = { ...user };

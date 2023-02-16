@@ -26,8 +26,7 @@ const Result = ( { stock, amount, currency } ) => {
 
     return (
         <ResultBox>
-            <h2>If only: </h2>
-  d
+     Hello
         </ResultBox>
     );
 };
