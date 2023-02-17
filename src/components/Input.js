@@ -5,32 +5,36 @@ import Result from './Result';
 
 const Input = ({stock, onInputSubmit}) => {
 
-    const [amount, setAmount] = useState('');
-    const [currency, setCurrency] = useState('');
+    const [enteredAmount, setEnteredAmount] = useState('');
+    const [enteredCurrency, setEnteredCurrency] = useState('');
 
     const handleAmountChange = (evt) => {
-        setAmount(evt.target.value);
+        setEnteredAmount(evt.target.value);
       }
     
       const handleCurrencyChange = (evt) => {
-        setCurrency(evt.target.value);
+        setEnteredCurrency(evt.target.value);
       }
     
     const handleFormSubmit = (evt) => {
         evt.preventDefault();
-        const amountToSubmit = amount;
-        const currencyToSubmit = currency;
-        if (!amountToSubmit || !currencyToSubmit){
-          return
-        }
+        // const amountToSubmit = amount;
+        // const currencyToSubmit = currency;
+        // 
     
-        onInputSubmit({						// NEW
-          amount: amountToSubmit,				// NEW
-          currency: currencyToSubmit					// NEW
-        });
+        const inputData = {						// NEW
+          amount: enteredAmount,				// NEW
+          currency: enteredCurrency					// NEW
+        };
+
+        if (!enteredAmount || !enteredCurrency){
+              return <Result/>
+            }
     
-        setAmount("");
-        setCurrency("");
+        // console.log(inputData)
+        // setEnteredAmount("");
+        // setEnteredCurrency("");
+
      }
 
      return (
@@ -38,21 +42,21 @@ const Input = ({stock, onInputSubmit}) => {
           <input 
             type="number"
             placeholder="Amount"
-            value={amount}
+            value={enteredAmount}
             onChange={handleAmountChange}			// NEW
           />
           <input 
             type="text"
             placeholder="Currency"
-            value={currency}
+            value={enteredCurrency}
             onChange={handleCurrencyChange}				// NEW
           />
-          <Link to="/result" 
-          element={<Result handleFormSubmit={handleFormSubmit} />}>
+          {/* <Link to="/result" 
+          element={<Result handleFormSubmit={handleFormSubmit} />}> */}
             <input 
             type="submit"
             value="Post"/>
-            </Link>
+            {/* </Link> */}
         </form>
       )
        }

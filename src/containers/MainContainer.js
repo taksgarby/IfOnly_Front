@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import StockList from '../components/StockList';
 import Input from '../components/Input';
 import Result from '../components/Result';
+import Basket from '../components/Result'
 
 const MainContainer = () => {
     const [ifOnlyStocks, setIfOnlyStocks] = useState([]);
@@ -17,6 +18,14 @@ const MainContainer = () => {
             .then((ifOnlyStocksData) => setIfOnlyStocks(ifOnlyStocksData));
     }, []);
 
+    const [user, setUser] = useState({
+
+        name: "Takako",
+        amount: 1000,
+        currency: "USD",
+        basket: []
+      });
+
     const getIfOnlyStockById = (id) => {
         ifOnlyStocks.find((ifOnlyStock) => ifOnlyStock.id === id);
     }
@@ -28,9 +37,10 @@ const MainContainer = () => {
       <Router>
       <Header />
       <Routes>
-      <Route path="/" exact element={ <StockList ifOnlyStocks={ifOnlyStocks} setIfOnlyStocks={ifOnlyStocks}  />} />
-      <Route path="/result" element={<Result onInputSubmit />} />
+      <Route path="/" exact element={ <StockList ifOnlyStocks={ifOnlyStocks} user = {user} onBasketAdd={setUser}  />} />
+      {/* <Route path="/result" element={<Result onInputSubmit />} /> */}
       {/* <Route path="/result"  element={<Result stock={stock} currency={currency} amount={amount}/>}/> */}
+      <Route path="/result" element={<Result user={user} onRemoveItem={setUser} />} />
       </Routes>
       </Router>
     );

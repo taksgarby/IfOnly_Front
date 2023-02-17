@@ -1,8 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
-import Input from './Input';
-
-const Stock = ({ stock }) => {
+const Stock = ({ stock, user, onBasketAdd }) => {
 
   const StockItem = styled.div `
 
@@ -29,6 +27,58 @@ const Stock = ({ stock }) => {
   const ItemPara = styled.p `
      margin: 5px;
   `
+  const [enteredAmount, setEnteredAmount] = useState('');
+  const [enteredCurrency, setEnteredCurrency] = useState('');
+
+  const handleAmountChange = (evt) => {
+    setEnteredAmount(evt.target.value);
+  }
+
+  const handleCurrencyChange = (evt) => {
+    setEnteredCurrency(evt.target.value);
+  }
+
+const onClick = () => {
+  const updatedUser = { ...user };
+  updatedUser.basket = [...updatedUser.basket, stock]
+  onBasketAdd(updatedUser);
+};
+
+const Button = styled.button `
+background-color: white;
+color: black;
+margin: 5px;
+border: 2px solid grey; 
+border-radius: 8px;
+`
+return (
+
+  <StockItem>
+   
+    {/* <form onSubmit ={onClick}> */}
+    <Button onClick={onClick}>Add To Basket</Button>
+    <p>{stock.companyName}</p>
+    <p>£{stock.country}</p>
+    {/* <input 
+          type="number"
+          placeholder="Amount"
+          value={enteredAmount}
+          onChange={handleAmountChange}			// NEW
+        />
+        <input 
+          type="text"
+          placeholder="Currency"
+          value={enteredCurrency}
+          onChange={handleCurrencyChange}				// NEW
+        />
+         <input 
+          type="submit"
+          value="Post" />
+</form> */}
+  </StockItem>
+
+);
+};
 
 
 
@@ -38,15 +88,15 @@ const Stock = ({ stock }) => {
 //     onBasketAdd(updatedUser);
 //   };
 
-  return (
-    <StockItem >
-      {/* <ItemImage src={require("../images/" + item.image)} alt="item" /> */}
-      {/* <Button onClick={onClick}>Add To Basket</Button> */}
-      <CompanyName>{stock.companyName}</CompanyName>
-      <Input stock ={stock} />
+//   return (
+//     <StockItem >
+//       {/* <ItemImage src={require("../images/" + item.image)} alt="item" /> */}
+//       {/* <Button onClick={onClick}>Add To Basket</Button> */}
+//       <CompanyName>{stock.companyName}</CompanyName>
+//       <Input stock ={stock} />
 
-    </StockItem>
-  );
-};
+//     </StockItem>
+//   );
+// };
 
 export default Stock;
