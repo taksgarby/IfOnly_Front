@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import StockList from '../components/StockList';
 import Input from '../components/Input';
 import Result from '../components/Result';
-import Basket from '../components/Result'
+
 
 const MainContainer = () => {
     const [ifOnlyStocks, setIfOnlyStocks] = useState([]);

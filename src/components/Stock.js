@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
+import "/node_modules/flag-icons/css/flag-icons.min.css";
+
 const Stock = ({ stock, user, onBasketAdd }) => {
 
   const StockItem = styled.div `
@@ -10,33 +12,30 @@ const Stock = ({ stock, user, onBasketAdd }) => {
     width: 150px;
     box-shadow: 2px 2px 4px grey;
     margin: 15px;
-    background-color: lightgray;
+    background-color: #669bbc;
   `
 
   const CompanyName = styled.div `
     padding: 1rem;
     margin-top: 1rem;
-    color: darkblue;
+    color: #fdf0d5;
+    font-size: 1.5rem;
+  `
+  const StockDetails = styled.div `
+    padding: 0.5rem;
+    color: #000814;
   `
 
-  const ItemImage = styled.img `
-    height: 300px;
-    box-shadow: 2px 2px 4px grey;
-  `
+  // const [enteredAmount, setEnteredAmount] = useState('');
+  // const [enteredCurrency, setEnteredCurrency] = useState('');
 
-  const ItemPara = styled.p `
-     margin: 5px;
-  `
-  const [enteredAmount, setEnteredAmount] = useState('');
-  const [enteredCurrency, setEnteredCurrency] = useState('');
+  // const handleAmountChange = (evt) => {
+  //   setEnteredAmount(evt.target.value);
+  // }
 
-  const handleAmountChange = (evt) => {
-    setEnteredAmount(evt.target.value);
-  }
-
-  const handleCurrencyChange = (evt) => {
-    setEnteredCurrency(evt.target.value);
-  }
+  // const handleCurrencyChange = (evt) => {
+  //   setEnteredCurrency(evt.target.value);
+  // }
 
 const onClick = () => {
   const updatedUser = { ...user };
@@ -45,20 +44,28 @@ const onClick = () => {
 };
 
 const Button = styled.button `
-background-color: white;
-color: black;
-margin: 5px;
-border: 2px solid grey; 
-border-radius: 8px;
+  background-color: #ffd60a;
+  color: black;
+  margin: 5px;
+  border: 2px solid grey; 
+  border-radius: 8px;
 `
+
+
 return (
 
   <StockItem>
    
     {/* <form onSubmit ={onClick}> */}
-    <Button onClick={onClick}>Add To Basket</Button>
-    <p>{stock.companyName}</p>
-    <p>£{stock.country}</p>
+
+    <CompanyName>{stock.companyName}</CompanyName>
+    <StockDetails>{stock.country}</StockDetails>
+ 
+    <StockDetails>{stock.industryType}</StockDetails>
+   
+
+    <Button onClick={onClick}>Add To Result</Button>
+
     {/* <input 
           type="number"
           placeholder="Amount"

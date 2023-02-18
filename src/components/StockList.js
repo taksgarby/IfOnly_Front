@@ -15,12 +15,6 @@ const StockList = ({ ifOnlyStocks, user, onBasketAdd }) => {
       <Stock key={stock.id} stock={stock} user={user} onBasketAdd={onBasketAdd} />
     ));
   
-    // const stockComponents = ifOnlyStocks.map((stock, id) => (
-  //   <Stock key={stock.id} stock={stock} />
-  // ));
-  // const stockComponents = ifOnlyStocks.map((stock, id) => (
-  //   <li key={stock.id}>{stock.companyName}</li>
-  // ))
 
 
     return (
@@ -38,11 +32,6 @@ const StockList = ({ ifOnlyStocks, user, onBasketAdd }) => {
 </>
   );
 };
-//   return (
-//     <StockList>
-//       {stockComponents}
-//     </StockList>
-//   );
-// };
+
 
 export default StockList;
