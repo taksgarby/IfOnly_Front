@@ -26,7 +26,7 @@ const StockList = ({ ifOnlyStocks, user, onBasketAdd }) => {
       {stockComponents}
 </StockList>
 
-<Link to="/result">Go to Basket</Link>
+<Link to="/result">Check your result</Link>
 
 </div>
 </>

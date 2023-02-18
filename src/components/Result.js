@@ -10,8 +10,12 @@ const Result = ( { user, onRemoveItem } ) => {
         margin: auto;
         padding: 10px;
         background-color: lightgrey;
-        color: black;
+        color: #000814;
         box-shadow: 4px 4px 4px 4px grey;
+    `
+
+    const KeyWordRed = styled.div`
+        color: #780000;
     `
 
     const Button = styled.button `
@@ -33,16 +37,18 @@ const Result = ( { user, onRemoveItem } ) => {
         <li>
             <hr />
             <span>
-                { item.companyName } £{ item.country }
-                <p>If you had only bought {user.currency} {user.amount} 
+               
+                <p>If you had only bought 
+                <KeyWordRed><strong> {user.currency} {user.amount} </strong></KeyWordRed>
                 worth of {item.companyName} stock in {item.minPriceDate} and sold it 
                 in {item.maxPriceDate} ...
                 <br/>
-                You could have made {(item.maxPrice - item.minPrice)* user.amount}
+                You could have made 
+                <KeyWordRed><strong>{user.currency} {(item.maxPrice - item.minPrice)* user.amount}</strong></KeyWordRed>
             </p>
                 {/* <img src={ require( "../images/" + item.image ) } alt="item" /> */}
             </span>
-           {/* <Total user={user} item ={item}/> */}
+
 
             <Button onClick={ () => removeItem( item ) }>Remove</Button>
         </li >
@@ -53,7 +59,7 @@ const Result = ( { user, onRemoveItem } ) => {
 
     return (
         <ResultBox>
-        <h2>Your items: </h2>
+        <h2>If Only: </h2>
         { user.basket.length > 0
             ? <ul >
                 { basketComponents }

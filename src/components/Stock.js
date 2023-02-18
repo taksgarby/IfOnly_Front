@@ -64,7 +64,7 @@ return (
     <StockDetails>{stock.industryType}</StockDetails>
    
 
-    <Button onClick={onClick}>Add To Result</Button>
+    <Button onClick={onClick}>If Only</Button>
 
     {/* <input 
           type="number"
