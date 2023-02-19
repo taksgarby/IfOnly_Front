@@ -37,8 +37,8 @@ const MainContainer = () => {
       <Router>
       <Header />
       <Routes>
-      <Route path="/" exact element={ <UserInput user = {user}   />} />
-      <Route path="/list" exact element={ <StockList ifOnlyStocks={ifOnlyStocks} user = {user} onBasketAdd={setUser}  />} />
+      <Route path="/form" exact element={ <UserInput user = {user}   />} />
+      <Route path="/" exact element={ <StockList ifOnlyStocks={ifOnlyStocks} user = {user} onBasketAdd={setUser}  />} />
       {/* <Route path="/result" element={<Result onInputSubmit />} /> */}
       {/* <Route path="/result"  element={<Result stock={stock} currency={currency} amount={amount}/>}/> */}
       <Route path="/result" element={<Result user={user} onRemoveItem={setUser} />} />
