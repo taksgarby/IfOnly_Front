@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Button = ({text, value, color, onClick}) => {
     
   const Button = styled.button `
-  background-color: #ffd60a;
+  background-color: #FFFF33;
   color: black;
   width: 100px;
   border: 2px solid grey; 

@@ -13,7 +13,7 @@ const Stock = ({ stock, user, onBasketAdd }) => {
     width: 150px;
     box-shadow: 2px 2px 4px grey;
     margin: 15px;
-    background-color: #669bbc;
+    background-color: #497285;
     font-family: roboto;
   `
 
@@ -25,7 +25,8 @@ const Stock = ({ stock, user, onBasketAdd }) => {
   `
   const StockDetails = styled.div `
     padding: 0.5rem;
-    color: #000814;
+    color: white;
+
   `
 
   // const [enteredAmount, setEnteredAmount] = useState('');

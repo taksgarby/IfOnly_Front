@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const Header = () => {
     const HeaderStyle = styled.header`
-        background-color: #003049; 
+        background-color: #2b4450; 
         color: white;
         display: flex;
         flex-direction: row;
