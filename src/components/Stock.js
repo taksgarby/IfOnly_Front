@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import "/node_modules/flag-icons/css/flag-icons.min.css";
+import Button from './reusable/Button';
 
 const Stock = ({ stock, user, onBasketAdd }) => {
 
@@ -8,7 +9,7 @@ const Stock = ({ stock, user, onBasketAdd }) => {
 
     display: flex;
     flex-direction: column;
-    height: 200px;
+    height: 220px;
     width: 150px;
     box-shadow: 2px 2px 4px grey;
     margin: 15px;
@@ -43,13 +44,6 @@ const onClick = () => {
   onBasketAdd(updatedUser);
 };
 
-const Button = styled.button `
-  background-color: #ffd60a;
-  color: black;
-  margin: 5px;
-  border: 2px solid grey; 
-  border-radius: 8px;
-`
 
 
 return (
@@ -64,7 +58,7 @@ return (
     <StockDetails>{stock.industryType}</StockDetails>
    
 
-    <Button onClick={onClick}>If Only</Button>
+    <Button onClick={onClick} text={"If Only"}></Button>
 
     {/* <input 
           type="number"

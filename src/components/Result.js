@@ -1,6 +1,6 @@
 import React from 'react';
+import Button from './reusable/Button';
 import styled from 'styled-components';
-import Input from './Input';
 
 const Result = ( { user, onRemoveItem } ) => {
 
@@ -10,19 +10,26 @@ const Result = ( { user, onRemoveItem } ) => {
         margin: auto;
         padding: 10px;
         background-color: lightgrey;
-        color: #000814;
+        color: #003049;
         box-shadow: 4px 4px 4px 4px grey;
     `
 
     const KeyWordRed = styled.div`
         color: #780000;
+        padding: 0.5rem;
     `
 
-    const Button = styled.button `
-        background-color: white;
-        color: black;
+    const KeyWordBlue = styled.div`
+        color: #03045e;
+        padding: 0.5rem;
+    `
+
+    const RemoveButton = styled.button `
+        background-color: #495057;
+        color: #fdf0d5;
         margin: 5px;
-        border: 2px solid grey; 
+        padding: 5px;
+
         border-radius: 8px;
      `
      const removeItem = ( itemToRemove ) => {
@@ -34,24 +41,33 @@ const Result = ( { user, onRemoveItem } ) => {
     };
 
     const basketComponents = user.basket.map( item => (
-        <li>
+        <div>
             <hr />
             <span>
                
                 <p>If you had only bought 
                 <KeyWordRed><strong> {user.currency} {user.amount} </strong></KeyWordRed>
-                worth of {item.companyName} stock in {item.minPriceDate} and sold it 
-                in {item.maxPriceDate} ...
+                worth of 
+                <KeyWordBlue><strong>{item.companyName} stock </strong></KeyWordBlue>
+                in <KeyWordBlue>{item.minPriceDate}</KeyWordBlue> and sold it 
+                in <KeyWordBlue>{item.maxPriceDate}</KeyWordBlue> ...
                 <br/>
-                You could have made 
-                <KeyWordRed><strong>{user.currency} {(item.maxPrice - item.minPrice)* user.amount}</strong></KeyWordRed>
+                {/* You could have made 
+                    numberOfShares = user.amount / item.minPrice
+                saleValue = numberOfShares * item.maxPrice
+                profit =  saleValue - user.amount
+
+                saleValue = (user.amount*item.maxPrice) / item.
+                            =(user.amount/item.minPrice)*item.maxPrice */}
+
+                <KeyWordRed><strong>{user.currency}  {Math.round(((user.amount/item.minPrice)*item.maxPrice - user.amount)*100)/100}</strong></KeyWordRed>
             </p>
                 {/* <img src={ require( "../images/" + item.image ) } alt="item" /> */}
             </span>
 
 
-            <Button onClick={ () => removeItem( item ) }>Remove</Button>
-        </li >
+            <RemoveButton onClick={ () => removeItem( item ) } >Bye Bye  &#128557;</RemoveButton>
+        </div >
     ) );
 
 
@@ -64,7 +80,7 @@ const Result = ( { user, onRemoveItem } ) => {
             ? <ul >
                 { basketComponents }
             </ul>
-            : <p>Basket Is Empty</p> } 
+            : <p>Try another stock</p> } 
        
 
   
