@@ -14,12 +14,13 @@ const Stock = ({ stock, user, onBasketAdd }) => {
     box-shadow: 2px 2px 4px grey;
     margin: 15px;
     background-color: #669bbc;
+    font-family: roboto;
   `
 
   const CompanyName = styled.div `
     padding: 1rem;
     margin-top: 1rem;
-    color: #fdf0d5;
+    color: white;
     font-size: 1.5rem;
   `
   const StockDetails = styled.div `

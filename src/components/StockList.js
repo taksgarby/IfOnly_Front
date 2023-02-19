@@ -14,21 +14,24 @@ const StockList = ({ ifOnlyStocks, user, onBasketAdd }) => {
     const stockComponents = ifOnlyStocks.map(stock => (
       <Stock key={stock.id} stock={stock} user={user} onBasketAdd={onBasketAdd} />
     ));
-  
+
+  const UserInfo = styled.div`
+      font-family: Merriweather;
+  ` 
 
 
     return (
 <>
-<div id="user-info">
-<h3>Welcome { user.name }</h3>
-<h4>You have { user.currency } { user.amount } you could have invested</h4>
+<UserInfo>
+<h2>Welcome { user.name }</h2>
+<h3>You have { user.currency } { user.amount } you could have invested</h3>
 <StockList>
       {stockComponents}
 </StockList>
 
 <Link to="/result">Check your result</Link>
 
-</div>
+</UserInfo>
 </>
   );
 };

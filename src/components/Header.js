@@ -9,7 +9,7 @@ const Header = () => {
         display: flex;
         flex-direction: row;
         margin-bottom: 3rem;
-
+        font-family: Merriweather;
         justify-content: center;
         `
 
