@@ -52,7 +52,9 @@ const Result = ( { user, onRemoveItem } ) => {
                 in <KeyWordBlue>{item.minPriceDate}</KeyWordBlue> and sold it 
                 in <KeyWordBlue>{item.maxPriceDate}</KeyWordBlue> ...
                 <br/>
-                {/* You could have made 
+                You could have made 
+            
+                {/* 
                     numberOfShares = user.amount / item.minPrice
                 saleValue = numberOfShares * item.maxPrice
                 profit =  saleValue - user.amount
