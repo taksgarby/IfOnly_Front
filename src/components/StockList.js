@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Stock from './Stock';
-import { Link } from "react-router-dom";
+
 
 const StockList = ({ ifOnlyStocks, user, onBasketAdd }) => {
 
@@ -16,7 +16,7 @@ const StockList = ({ ifOnlyStocks, user, onBasketAdd }) => {
     ));
 
   const UserInfo = styled.div`
-      font-family: Merriweather;
+      font-family: 'Open Sans';
   ` 
 
 
@@ -29,7 +29,7 @@ const StockList = ({ ifOnlyStocks, user, onBasketAdd }) => {
       {stockComponents}
 </StockList>
 
-<Link to="/result">Check your result</Link>
+{/* <Link to="/result">Check your result</Link> */}
 
 </UserInfo>
 </>

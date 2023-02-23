@@ -1,0 +1,69 @@
+import React, {useState} from "react";
+
+const UserForm = () => {
+
+  const [userName, setUserName] = useState("");
+//   const [currency, setCurrency] = useState("");
+//   const [amount, setAmount] = useState("");
+
+  const handleUserNameChange = (evt) => {
+    setUserName(evt.target.value);
+  }
+
+//   const handleCurrencyChange = (evt) => {
+//     setCurrency(evt.target.value);
+//   }
+
+//   const handleAmountChange = (evt) => {
+//     setAmount(evt.target.value);
+//   }
+
+  const handleFormSubmit = (evt) => {
+    evt.preventDefault();
+    // const userToSubmit = user.trim();
+    // if (!userToSubmit || !amountToSubmit){
+    //   return
+    // }
+
+    // onUserSubmit({
+    //   user: userToSubmit,
+      
+    // });
+
+    setUserName("");
+    // setCurrency("");
+    // setAmount("");
+
+
+  }
+
+  return (
+    <form onSubmit={handleFormSubmit}>
+      <input 
+        type="text"
+        placeholder="Your name"
+        value={userName}
+        onChange={handleUserNameChange}
+      />
+     {/* <select id="currency" value={currency} onChange={handleCurrencyChange}>
+        <option value="" disabled>Choose...</option>
+        <option id="USA" value="USD">USD</option>
+        <option id="GBP" value="GBP">GBP</option>
+    </select> 
+       */}
+      {/* <input 
+        type="number"
+        placeholder="type amount"
+        value={amount}
+        onChange={handleAmountChange}
+      /> */}
+      <input 
+        type="submit"
+        value="Post"
+      />
+    </form>
+  )
+
+}
+
+export default UserForm;

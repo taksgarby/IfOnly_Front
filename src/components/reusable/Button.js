@@ -11,7 +11,7 @@ const Button = ({text, value, color, onClick}) => {
   border: 2px solid grey; 
   border-radius: 8px;
   padding: 5px;
-  margin-left: 1.5rem;
+  margin-left: 0.5rem;
   margin-bottom: 0.3rem;
   margin-top: 0px;
 `

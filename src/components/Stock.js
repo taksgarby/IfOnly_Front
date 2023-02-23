@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import Button from './reusable/Button';
+import { Link } from "react-router-dom";
 
 const Stock = ({ stock, user, onBasketAdd }) => {
 
@@ -13,7 +14,7 @@ const Stock = ({ stock, user, onBasketAdd }) => {
     width: 150px;
     box-shadow: 2px 2px 4px grey;
     margin: 15px;
-    background-color: #497285;
+    background-color: #3366FF;
     font-family: roboto;
   `
 
@@ -60,7 +61,7 @@ return (
     <StockDetails>{stock.industryType}</StockDetails>
    
 
-    <Button onClick={onClick} text={"If Only"}></Button>
+    <Link to="/result"><Button onClick={onClick} text={"If Only"}></Button></Link>
 
     {/* <input 
           type="number"
