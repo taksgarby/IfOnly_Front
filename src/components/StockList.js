@@ -24,7 +24,7 @@ const StockList = ({ ifOnlyStocks, user, onBasketAdd }) => {
 <>
 <UserInfo>
 <h2>Welcome { user.name }</h2>
-<h3>You have { user.currency } { user.amount } you could have invested</h3>
+<h3>You have { user.amount } { user.currency } you could have invested</h3>
 <StockList>
       {stockComponents}
 </StockList>
