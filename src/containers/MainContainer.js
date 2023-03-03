@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import StockList from '../components/StockList';
 import UserInput from '../components/UserInput';
 import Result from '../components/Result';
-
+import "./container.css"
 
 const MainContainer = () => {
     const [ifOnlyStocks, setIfOnlyStocks] = useState([]);
@@ -34,8 +34,8 @@ const MainContainer = () => {
 
 
   return (
+    <div class="container">
       <Router>
-      <Header /> 
       <Routes>
       <Route path="/form" exact element={ <UserInput user = {user}   />} />
       <Route path="/" exact element={ <StockList ifOnlyStocks={ifOnlyStocks} user = {user} onBasketAdd={setUser}  />} />
@@ -44,6 +44,7 @@ const MainContainer = () => {
       <Route path="/result" element={<Result user={user} onRemoveItem={setUser} />} />
       </Routes>
       </Router>
+      </div>
     );
     
 };

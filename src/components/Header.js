@@ -9,7 +9,7 @@ const Header = () => {
         color: white;
         display: flex;
         flex-direction: row;
-        margin-bottom: 3rem;
+        margin: 0;
         font-family: 'Tilt Prism';
         justify-content: center;
         font-size: 1.2rem;
