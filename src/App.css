@@ -37,10 +37,10 @@
   }
 }
 
-.body-container {
+/* .body-container {
   background-color: #e6f7ea;
   opacity: 0.8;
   background: radial-gradient(circle, transparent 20%, #e6f7ea 20%, #e6f7ea 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #e6f7ea 20%, #e6f7ea 80%, transparent 80%, transparent) 27.5px 27.5px, linear-gradient(#f7455f 2.2px, transparent 2.2px) 0 -1.1px, linear-gradient(90deg, #f7455f 2.2px, #e6f7ea 2.2px) -1.1px 0;
   background-size: 55px 55px, 55px 55px, 27.5px 27.5px, 27.5px 27.5px;
   margin: 0px;
-}
+} */

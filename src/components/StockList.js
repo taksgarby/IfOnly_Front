@@ -22,17 +22,17 @@ const StockList = ({ ifOnlyStocks, user, onBasketAdd }) => {
 
     const UserInfo = styled.div`
       font-family: 'Amatic SC', cursive;
-      font-size: 2rem;
       margin: 0px;
       padding: 0px;
+  
     `
   
 
     return (
 <>
 <UserInfo>
-<p class="welcome">Welcome { user.name }</p>
-<h3>You have { user.amount } { user.currency } you could have invested</h3>
+<p class="welcome">Welcome { user.name } <br/>
+You have { user.amount } { user.currency } you could have invested</p>
 </UserInfo>
 <StockList>
       {stockComponents}

@@ -1,12 +1,20 @@
 import React, {useState} from 'react';
 import { Link } from "react-router-dom";
-import styled from 'styled-components';
 import Result from './Result';
+import StockList from './StockList';
+import "./input.css";
+import Button from './reusable/Button';
+
 
 const Input = ({stock, onInputSubmit}) => {
 
+    const [userName, setUserName] = useState('');  
     const [enteredAmount, setEnteredAmount] = useState('');
     const [enteredCurrency, setEnteredCurrency] = useState('');
+
+    const handleUserName = (evt) => {
+      setUserName(evt.target.value);
+    }
 
     const handleAmountChange = (evt) => {
         setEnteredAmount(evt.target.value);
@@ -18,17 +26,15 @@ const Input = ({stock, onInputSubmit}) => {
     
     const handleFormSubmit = (evt) => {
         evt.preventDefault();
-        // const amountToSubmit = amount;
-        // const currencyToSubmit = currency;
-        // 
-    
-        const inputData = {						// NEW
-          amount: enteredAmount,				// NEW
-          currency: enteredCurrency					// NEW
+
+        const inputData = {						
+          userName: userName,
+          amount: enteredAmount,				
+          currency: enteredCurrency			
         };
 
         if (!enteredAmount || !enteredCurrency){
-              return <Result/>
+              return <StockList/>
             }
     
         // console.log(inputData)
@@ -39,25 +45,53 @@ const Input = ({stock, onInputSubmit}) => {
 
      return (
         <form className='inputForm' onSubmit={handleFormSubmit}>
+          <div class="form-grid-container">
+          <div class="grid-item">
+          <label htmlFor="userName">Your Name:</label>
+          </div>
+          <div class="grid-item">
+          <input 
+            type="text"
+            placeholder="Your Name"
+            value={userName}
+            onChange={handleUserName}			// NEW
+          />
+          </div>
+          <div class="grid-item">
+          <label htmlFor="amount">Amount:</label>
+          </div>
+          <div class="grid-item">
           <input 
             type="number"
             placeholder="Amount"
             value={enteredAmount}
             onChange={handleAmountChange}			// NEW
           />
-          <input 
-            type="text"
-            placeholder="Currency"
-            value={enteredCurrency}
-            onChange={handleCurrencyChange}				// NEW
-          />
+          </div>
+          <div class="grid-item">
+          <label htmlFor="curency">Currency:</label>
+          </div>
+          <div class="grid-item">
+          <select id="currency" value={enteredCurrency} onChange={handleCurrencyChange}>
+          <option value="" disabled>Choose...</option>
+          <option id="USA" value="USD">USD</option>
+          <option id="GBP" value="GBP">GBP</option>
+          </select> 
+          </div>
           {/* <Link to="/result" 
           element={<Result handleFormSubmit={handleFormSubmit} />}> */}
-            <input 
+             <div class="grid-item"></div>
+           <div class="grid-item">
+           <Link to="/welcome"><Button onClick={handleFormSubmit} text={"Submit"}></Button></Link>
+            {/* <input 
             type="submit"
-            value="Post"/>
+            value="Post"/> */}
             {/* </Link> */}
+            </div>
+            </div>
         </form>
+
+
       )
        }
     

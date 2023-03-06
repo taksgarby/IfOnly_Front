@@ -1,0 +1,29 @@
+/* .input-form {
+    margin-top: 3rem;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.input {
+    font-size: 1.3rem;
+
+} */
+
+.form-grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-top: 5rem;
+    padding-left: 5rem;
+   
+  }
+  .grid-item {
+
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+ 

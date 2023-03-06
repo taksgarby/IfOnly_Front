@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from '../components/Header';
 import StockList from '../components/StockList';
-import UserInput from '../components/UserInput';
+import Input from '../components/Input';
 import Result from '../components/Result';
 import "./container.css"
 
@@ -37,11 +37,12 @@ const MainContainer = () => {
     <div class="container">
       <Router>
       <Routes>
-      <Route path="/form" exact element={ <UserInput user = {user}   />} />
-      <Route path="/" exact element={ <StockList ifOnlyStocks={ifOnlyStocks} user = {user} onBasketAdd={setUser}  />} />
+
+      <Route path="/welcome" exact element={ <StockList ifOnlyStocks={ifOnlyStocks} user = {user} onBasketAdd={setUser}  />} />
       {/* <Route path="/result" element={<Result onInputSubmit />} /> */}
       {/* <Route path="/result"  element={<Result stock={stock} currency={currency} amount={amount}/>}/> */}
       <Route path="/result" element={<Result user={user} onRemoveItem={setUser} />} />
+      <Route path="/" element={<Input />}/>
       </Routes>
       </Router>
       </div>

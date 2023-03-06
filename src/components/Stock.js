@@ -12,7 +12,7 @@ const Stock = ({ stock, user, onBasketAdd }) => {
 
   display: flex;
   flex-direction: column;
-  height: 260px;
+  height: 270px;
   width: 150px;
   box-shadow: 2px 2px 4px grey;
   margin: 15px;
